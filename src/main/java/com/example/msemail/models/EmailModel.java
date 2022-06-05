@@ -1,19 +1,22 @@
 package com.example.msemail.models;
 
+import com.example.msemail.enums.StatusEmail;
 import lombok.Data;
 
+import javax.persistence.*;
 
 
 @Data
 @Entity
-@Table(name="TBL_EMA
-public class EmailModel {
+@Table(name = "TBL_EMAIL")
+public class EmailModel implements Serializable {
 
-    private static final long serialVersionUID = 1;
+
+    private static final long serialVersionUID = 1L;
 
     @Id
-    @Generatedvalue(strategy= GenerationType.AUTO)
-    private Long emailId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID emailId;
 
     private String ownerRef;
 
@@ -26,8 +29,9 @@ public class EmailModel {
     @Column(columnDefinition = "TEXT")
     private String text;
 
-    private LocalDateTime sendDate;
+    private LocalDateTime sendDateEmail;
 
     private StatusEmail statusEmail;
-    
+
+
 }
