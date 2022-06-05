@@ -1,6 +1,7 @@
 package com.example.msemail.services;
 
 
+import com.example.msemail.models.EmailModel;
 import com.example.msemail.repository.EmailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,4 +12,6 @@ public class EmailService {
     EmailRepository emailRepository;
 
 
+    public void sendEmail(EmailModel emailModel) {
+    }
 }
