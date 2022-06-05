@@ -1,8 +1,9 @@
 package com.example.msemail.dtos;
 
-import lombock.Data;
+import lombok.Data;
 
-import javax.persistence.Column;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 @Data
 public class EmailDto {
@@ -11,19 +12,16 @@ public class EmailDto {
     private String ownerRef;
 
     @NotBlank
-    private vate Sreing emailRef;
+    @Email
+    private String emailFrom;
 
     @NotBlank
     @Email
-    private avata Sreing emailTo;
+    private String emailTo;
 
     @NotBlank
-    @Email
     private String subject;
 
     @NotBlank
     private String text;
-
-
-    
 }
